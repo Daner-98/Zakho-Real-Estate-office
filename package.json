@@ -1,0 +1,12 @@
+{
+  "name": "real-estate-website",
+  "version": "1.0.0",
+  "description": "Modern real estate website with property listings and CEO dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

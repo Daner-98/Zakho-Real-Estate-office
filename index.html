@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakho Real Estate - Premium Property Listings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🏢  Zakho Real Estate</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#" id="login-link" class="btn-login">CEO Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Your Trusted Real Estate Partner</h2>
+            <p>Discover exceptional properties with personalized service from our CEO</p>
+            <a href="#properties" class="btn-primary">View Properties</a>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <h2>Find Your Perfect Property</h2>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search by property name or location...">
+                <button id="search-btn" class="btn-primary">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="properties-section">
+        <div class="container">
+            <h2>Featured Properties</h2>
+            <div class="properties-grid" id="properties-container">
+                <!-- Properties will be loaded here dynamically -->
+                <p class="no-properties">No properties available. Please add properties through the CEO dashboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Detail Modal -->
+    <div id="property-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="property-detail-content">
+                <!-- Property details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-login">&times;</span>
+            <div class="login-form">
+                <h2> Administration</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" required placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required placeholder="Enter  password">
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- CEO Dashboard Modal -->
+    <div id="dashboard-modal" class="modal">
+        <div class="modal-content dashboard">
+            <span class="close-dashboard">&times;</span>
+            <h2>Daner Dashboard</h2>
+            <p>Welcome, Daner! Manage all your real estate properties and transactions here.</p>
+            
+            <!-- Dashboard Navigation -->
+            <div class="dashboard-nav">
+                <button class="nav-btn active" data-tab="properties">Properties</button>
+                <button class="nav-btn" data-tab="transactions">Transactions</button>
+                <button class="nav-btn" data-tab="contacts">Office work</button>
+                <button class="nav-btn" data-tab="finances">Finances Daily</button>
+            </div>
+            
+            <!-- Properties Tab -->
+            <div class="tab-content active" id="properties-tab">
+                <div class="dashboard-header">
+                    <h3>Manage Properties</h3>
+                    <button id="add-property-btn" class="btn-primary">Add New Property</button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="property-search" placeholder="Search properties by name or location...">
+                    <button id="property-search-btn">Search</button>
+                </div>
+                
+                <div class="table-container">
+                    <table id="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Price</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="properties-table-body">
+                            <!-- Properties will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Transactions Tab -->
+            <div class="tab-content" id="transactions-tab">
+                <div class="dashboard-header">
+                    <h3>Property Transactions</h3>
+                    <button id="add-transaction-btn" class="btn-primary">Add Transaction</button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="transaction-search" placeholder="Search transactions...">
+                    <button id="transaction-search-btn">Search</button>
+                </div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Buyer Name</th>
+                                <th>Seller Name</th>
+                                <th>Buyer Phone</th>
+                                <th>Seller Phone</th>
+                                <th>Price</th>
+                                <th>Date</th>
+                                <th>Property</th>
+                                <th>Property Number</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-table-body">
+                            <!-- Transactions will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Contacts Tab -->
+            <div class="tab-content" id="contacts-tab">
+                <div class="dashboard-header">
+                    <h3>Mr Contacts</h3>
+                    <button id="add-contact-btn" class="btn-primary">Add Contact</button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="contact-search" placeholder="Search contacts...">
+                    <button id="contact-search-btn">Search</button>
+                </div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mr Name</th>
+                                <th>Property Value</th>
+                                <th>information</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contacts-table-body">
+                            <!-- Contacts will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Finances Tab -->
+            <div class="tab-content" id="finances-tab">
+                <div class="dashboard-header">
+                    <h3>Financial Records</h3>
+                    <button id="add-finance-btn" class="btn-primary">Add Record</button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="finance-search" placeholder="Search financial records...">
+                    <button id="finance-search-btn">Search</button>
+                </div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mr Name</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="finances-table-body">
+                            <!-- Finances will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Property Modal -->
+    <div id="add-property-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-add-property">&times;</span>
+            <h2>Add New Property Listing</h2>
+            <form id="add-property-form">
+                <div class="form-group">
+                    <label for="property-name">Property name place *</label>
+                    <input type="text" id="property-name" required placeholder="e.g., azad ">
+                </div>
+                <div class="form-group">
+                    <label for="property-phone">Contact Phone Number *</label>
+                    <input type="text" id="property-phone" required placeholder="e.g., +9647504502020">
+                </div>
+                <div class="form-group">
+                    <label for="property-place">Location *</label>
+                    <input type="text" id="property-place" required placeholder="e.g., Bedar">
+                </div>
+                <div class="form-group">
+                    <label for="property-price">Price ($) *</label>
+                    <input type="number" id="property-price" required placeholder="e.g., 15000">
+                </div>
+                <div class="form-group">
+                    <label for="property-type">Property Type *</label>
+                    <select id="property-type" required>
+                        <option value="">Select property type</option>
+                        <option value="house">House</option>
+                        <option value="land">Land</option>
+                        <option value="apartment">Apartment</option>
+                    </select>
+                </div>
+                <div id="house-fields">
+                    <div class="form-group">
+                        <label for="property-bedrooms">Bedrooms</label>
+                        <input type="number" id="property-bedrooms" placeholder="e.g., 4">
+                    </div>
+                    <div class="form-group">
+                        <label for="property-bathrooms">Bathrooms</label>
+                        <input type="number" id="property-bathrooms" placeholder="e.g., 3">
+                    </div>
+                    <div class="form-group">
+                        <label for="property-floor">Floor</label>
+                        <input type="number" id="property-floor" placeholder="e.g., 2">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="property-description">Description *</label>
+                    <textarea id="property-description" rows="4" required placeholder="Detailed description of the property"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="property-photos">Photos</label>
+                    <input type="file" id="property-photos" accept="image/*" multiple>
+                    <small>Select photos from your device (multiple files allowed)</small>
+                </div>
+                <div class="form-group">
+                    <label for="property-videos">Videos</label>
+                    <input type="file" id="property-videos" accept="video/*" multiple>
+                    <small>Select videos from your device (multiple files allowed)</small>
+                </div>
+                <button type="submit" class="btn-primary">Add Property</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Transaction Modal -->
+    <div id="add-transaction-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-add-transaction">&times;</span>
+            <h2>Add New Transaction</h2>
+            <form id="add-transaction-form">
+                <div class="form-group">
+                    <label for="buyer-name">Buyer Name *</label>
+                    <input type="text" id="buyer-name" required placeholder="e.g., ahmad azad">
+                </div>
+                <div class="form-group">
+                    <label for="seller-name">Seller Name *</label>
+                    <input type="text" id="seller-name" required placeholder="e.g., tarq zebari">
+                </div>
+                <div class="form-group">
+                    <label for="buyer-phone">Buyer Phone Number *</label>
+                    <input type="text" id="buyer-phone" required placeholder="e.g., +9647504502020">
+                </div>
+                <div class="form-group">
+                    <label for="seller-phone">Seller Phone Number *</label>
+                    <input type="text" id="seller-phone" required placeholder="e.g., +9647504502020">
+                </div>
+                <div class="form-group">
+                    <label for="transaction-price">Price ($) *</label>
+                    <input type="number" id="transaction-price" required placeholder="e.g., 1500000">
+                </div>
+                <div class="form-group">
+                    <label for="transaction-date">Date *</label>
+                    <input type="date" id="transaction-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="property-name-transaction">Property name place *</label>
+                    <input type="text" id="property-name-transaction" required placeholder="e.g., Luxury Beach Villa">
+                </div>
+                <div class="form-group">
+                    <label for="property-number-place">Property number place</label>
+                    <input type="text" id="property-number-place" placeholder="e.g., 12345">
+                </div>
+                <button type="submit" class="btn-primary">Add Transaction</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Contact Modal -->
+    <div id="add-contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-add-contact">&times;</span>
+            <h2>Add New Contact</h2>
+            <form id="add-contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Client Name *</label>
+                    <input type="text" id="contact-name" required placeholder="e.g., ali barwari">
+                </div>
+                <div class="form-group">
+                    <label for="contact-price">Property Value ($) *</label>
+                    <input type="number" id="contact-price" required placeholder="e.g., 1500000">
+                </div>
+                <div class="form-group">
+                    <label for="contact-bank">name person or Location</label>
+                    <input type="text" id="contact-bank" placeholder="e.g., Ahmad Bedare">
+                </div>
+                <button type="submit" class="btn-primary">Add Contact</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Finance Modal -->
+    <div id="add-finance-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-add-finance">&times;</span>
+            <h2>Add Financial Record</h2>
+            <form id="add-finance-form">
+                <div class="form-group">
+                    <label for="finance-name">Client Name *</label>
+                    <input type="text" id="finance-name" required placeholder="e.g., tarq zebari">
+                </div>
+                <div class="form-group">
+                    <label for="finance-price">Amount ($) *</label>
+                    <input type="number" id="finance-price" required placeholder="e.g., 50000">
+                </div>
+                <div class="form-group">
+                    <label for="finance-date">Date *</label>
+                    <input type="date" id="finance-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="property-name-finance">Property name place *</label>
+                    <input type="text" id="property-name-finance" required placeholder="e.g., Luxury Beach Villa">
+                </div>
+                <div class="form-group">
+                    <label for="finance-type">Record Type *</label>
+                    <select id="finance-type" required>
+                        <option value="">Select record type</option>
+                        <option value="deposit">Deposit</option>
+                        <option value="withdrawal">Withdrawal</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Add Record</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

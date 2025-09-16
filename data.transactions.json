@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "buyerName": "John Smith",
+    "sellerName": "Jane Doe",
+    "buyerPhoneNumber": "+1234500001",
+    "sellerPhoneNumber": "+1234500002",
+    "price": 750000,
+    "date": "2023-05-15",
+    "landName": "Downtown Apartment",
+    "landInfo": "2BR apartment in downtown area"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Luxury Villa",
+    "phoneNumber": "+1234567890",
+    "place": "Miami, FL",
+    "price": 1500000,
+    "type": "house",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "floor": 2,
+    "description": "Beautiful luxury villa with ocean view, modern amenities, and spacious rooms.",
+    "photos": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1153&q=80"
+    ],
+    "videos": []
+  },
+  {
+    "id": 2,
+    "name": "Downtown Apartment",
+    "phoneNumber": "+1234567891",
+    "place": "New York, NY",
+    "price": 850000,
+    "type": "apartment",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "floor": 15,
+    "description": "Modern apartment in the heart of downtown with city skyline views.",
+    "photos": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+    ],
+    "videos": []
+  },
+  {
+    "id": 3,
+    "name": "Suburban Land",
+    "phoneNumber": "+1234567892",
+    "place": "Austin, TX",
+    "price": 500000,
+    "type": "land",
+    "bedrooms": null,
+    "bathrooms": null,
+    "floor": null,
+    "description": "Large plot of land in a quiet suburban area, perfect for building your dream home.",
+    "photos": [
+      "https://images.unsplash.com/photo-1500382018106-8c5f5d9d461d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+    ],
+    "videos": []
+  }
+]

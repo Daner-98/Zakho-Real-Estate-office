@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "Property Deposit",
+    "price": 50000,
+    "date": "2023-06-01",
+    "landName": "Luxury Villa",
+    "type": "deposit"
+  }
+]
